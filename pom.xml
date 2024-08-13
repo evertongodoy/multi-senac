@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.senac</groupId>
+	<artifactId>multi-senac</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>aulas</name>
+	<description>Demo project for Spring Boot</description>
+
+	<modules>
+		<module>junit</module>
+	</modules>
+
+	<!-- Para poder utilizar a palavra var, utilizar source e target -->
+	<properties>
+		<maven.compiler.source>21</maven.compiler.source>  <!-- ou 10, 17, etc -->
+		<maven.compiler.target>21</maven.compiler.target>  <!-- ou 10, 17, etc -->
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.0</version>  <!-- Ou a versão mais recente -->
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
