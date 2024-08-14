@@ -9,4 +9,5 @@ public class JunitApplication {
         System.out.println("Resultado = " + result);
 
     }
+
 }

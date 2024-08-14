@@ -22,6 +22,6 @@ public class Calculadora {
     }
 
     private String getSinal(String acao){
-        return calculadoraService.getAcao(acao);
+        return calculadoraService.getSignal(acao);
     }
 }

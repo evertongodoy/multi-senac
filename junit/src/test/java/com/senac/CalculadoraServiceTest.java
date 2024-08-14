@@ -10,37 +10,37 @@ class CalculadoraServiceTest {
     private final CalculadoraService calculadoraService = new CalculadoraService();
 
     @Test
-    void testGetAcaoSomar() {
-        String actual = calculadoraService.getAcao("somar");
+    void testGetSignalSomar() {
+        String actual = calculadoraService.getSignal("somar");
         var expected = "+";
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testGetAcaoSubtrair() {
-        String actual = calculadoraService.getAcao("subtrair");
+    void testGetSignalSubtrair() {
+        String actual = calculadoraService.getSignal("subtrair");
         var expected = "-";
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testGetAcaoMultiplicar() {
-        String actual = calculadoraService.getAcao("multiplicar");
+    void testGetSignalMultiplicar() {
+        String actual = calculadoraService.getSignal("multiplicar");
         var expected = "*";
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testGetAcaoDividir() {
-        String actual = calculadoraService.getAcao("dividir");
+    void testGetSignalDividir() {
+        String actual = calculadoraService.getSignal("dividir");
         var expected = "/";
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testGetAcaoThrowException() {
+    void testGetSignalThrowException() {
         RuntimeException exception = Assertions.assertThrows(RuntimeException.class,
-                () -> calculadoraService.getAcao("naoExisteAcao"));
+                () -> calculadoraService.getSignal("naoExisteAcao"));
         Assertions.assertEquals("Acao nao localizada", exception.getMessage());
 
     }

@@ -2,7 +2,7 @@ package com.senac;
 
 public class CalculadoraService {
 
-    public String getAcao(String acao){
+    public String getSignal(String acao){
         if(acao.equalsIgnoreCase("somar")){
             return "+";
         } else if (acao.equalsIgnoreCase("subtrair")) {
