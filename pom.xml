@@ -16,6 +16,7 @@
 		<module>conversor-moedas</module>
 		<module>calcular-imposto</module>
 		<module>calcular-area</module>
+		<module>exemplo-formulario-inicio</module>
 	</modules>
 
 	<!-- Springboot Boot -->

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Formulário como JSON</title>
+</head>
+<body>
+<form id="jsonForm">
+    <label for="numero">Numero:</label>
+    <input type="number" id="numero" name="numero" required>
+    <br><br>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br><br>
+    <button type="submit">Enviar</button>
+</form>
+
+<!-- Elemento onde a resposta será exibida -->
+<div id="responseContainer"></div>
+
+
+<script>
+    document.getElementById('jsonForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Captura os valores dos campos do formulário
+            const numero = Number(document.getElementById('numero').value);
+            const nome = document.getElementById('nome').value;
+
+            // Cria o objeto JSON
+            let data = {
+                numero: numero,
+                nome: nome
+            };
+
+            // Envia a requisição via POST
+            fetch('/api/formulario/json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Sucesso:', data);
+               // Exibindo o JSON no elemento div
+                document.getElementById('responseContainer').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch((error) => {
+                console.error('Erro:', error);
+            });
+        });
+</script>
+</body>
+</html>
