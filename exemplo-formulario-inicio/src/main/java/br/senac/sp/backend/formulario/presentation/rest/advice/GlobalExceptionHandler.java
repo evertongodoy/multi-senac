@@ -1,4 +1,4 @@
-package br.senac.sp.backend.formulario.controller.advice;
+package br.senac.sp.backend.formulario.presentation.rest.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

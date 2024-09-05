@@ -1,4 +1,4 @@
-package br.senac.sp.backend.formulario.controller.request;
+package br.senac.sp.backend.formulario.application.dto;
 
 public class FormularioRequest {
 
