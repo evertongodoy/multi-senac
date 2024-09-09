@@ -1,4 +1,4 @@
-package sp.senac.br;
+package br.senac.sp;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

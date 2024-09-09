@@ -1,4 +1,4 @@
-package sp.senac.br;
+package br.senac.sp;
 
 public class Calculadora {
 
