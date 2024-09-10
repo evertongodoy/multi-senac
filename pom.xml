@@ -17,7 +17,8 @@
 		<module>calcular-imposto</module>
 		<module>calcular-area</module>
 		<module>exemplo-formulario-inicio</module>
-	</modules>
+        <module>estrutura-sites</module>
+    </modules>
 
 	<!-- Springboot Boot -->
 	<parent>
