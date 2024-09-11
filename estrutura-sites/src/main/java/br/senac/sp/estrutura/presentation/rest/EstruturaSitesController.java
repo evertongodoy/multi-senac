@@ -1,20 +1,26 @@
 package br.senac.sp.estrutura.presentation.rest;
 
-import br.senac.sp.estrutura.application.dto.LoginRequest;
-import org.springframework.http.ResponseEntity;
+import br.senac.sp.estrutura.application.dto.User;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("api/estrutura-site")
+@Controller
 public class EstruturaSitesController {
 
-    @PostMapping("/login")
-    public ResponseEntity<?> executar(@ModelAttribute LoginRequest loginRequest, Model model){
-        return ResponseEntity.ok().body("Retornou um OK");
+    @GetMapping("/userForm")
+    public String home(Model model) {
+//        model.addAttribute("nomeDoAtributo", "Treinaweb");
+        model.addAttribute("user", new User());
+        return "userForm";
     }
 
+    @PostMapping("/submitUser")
+    public String homePost(@ModelAttribute User user, Model model) {
+//        model.addAttribute("nomeDoAtributo", "TreinawebPOST");
+        model.addAttribute("submittedUser", user);
+        return "result";
+    }
 }

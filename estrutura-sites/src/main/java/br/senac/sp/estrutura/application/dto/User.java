@@ -1,6 +1,6 @@
 package br.senac.sp.estrutura.application.dto;
 
-public class LoginRequest {
+public class User {
 
     private String nome;
     private String email;
@@ -9,7 +9,7 @@ public class LoginRequest {
         return nome;
     }
 
-    public LoginRequest setNome(String nome) {
+    public User setNome(String nome) {
         this.nome = nome;
         return this;
     }
@@ -18,7 +18,7 @@ public class LoginRequest {
         return email;
     }
 
-    public LoginRequest setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
         return this;
     }
