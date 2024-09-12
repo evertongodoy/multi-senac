@@ -1,16 +1,129 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Result</title>
+    <title>Resultado da reserva</title>
+
+    <style>
+        /* Estilo para alinhar os campos Nome e E-Mail, e Pessoas e Animal na mesma linha */
+        .inline-fields {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Espaço entre os campos */
+            flex-wrap: wrap; /* Permite que os campos quebrem a linha se necessário - responsivo*/
+        }
+
+        .inline-fields div {
+            flex: 48%; /* Os campos ocupam o mesmo espaço */
+            min-width: 200px; /* Define uma largura mínima para os campos - responsivo */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%; /* Faz o campo preencher seu contêiner */
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos adicionais para o formulário */
+        form {
+            max-width: 900px;
+            margin: 0 auto; /* Centraliza o formulário na tela */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 100%; /* Botão de envio preenchendo toda a largura */
+          //  padding: 10px;
+          //  background-color: #4CAF50;
+          //  color: white;
+          //  border: none;
+          //  border-radius: 5px;
+          //  cursor: pointer;
+        }
+
+
+        /* Media Queries para telas menores */
+        @media (max-width: 768px) {
+            .inline-fields {
+                flex-direction: column; /* Coloca os campos em formato de coluna em telas menores */
+            }
+            .inline-fields div {
+                width: 100%; /* Campos ocupam 100% da largura em telas pequenas */
+            }
+        }
+
+        /* Centraliza o título H2 conforme o formulário */
+        h2 {
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .aprovado {
+            color: blue;
+        }
+        .reprovado {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Submitted Information</h2>
+<h2>Resultado da reserva</h2>
 
-<p>Name: <span th:text="${submittedUser.nome}"></span></p>
-<p>Email: <span th:text="${submittedUser.email}"></span></p>
 
-<a href="/userForm">Back to form</a>
+
+
+<form>
+<!-- Nome e E-Mail na mesma linha -->
+<div class="inline-fields">
+    <div>
+        <p>Name: <br><span th:text="${reservaEnviada.nome}"></span></p>
+    </div>
+    <div>
+        <p>Email: <br><span th:text="${reservaEnviada.email}"></span></p>
+    </div>
+</div>
+<br>
+
+<p>Data Reserva: <br><span th:text="${reservaEnviada.data}"></span></p>
+
+<!-- Quantidade de Pessoas e Animal na mesma linha -->
+<div class="inline-fields">
+    <div>
+        <p>Quantidade pessoas: <br><span th:text="${reservaEnviada.pessoas}"></span></p></div>
+    <div>
+        <p>Animal: <br><span th:text="${reservaEnviada.animal}"></span></p>
+    </div>
+</div>
+<br>
+
+<p>Comentario: <br><span th:text="${reservaEnviada.comentario}"></span></p>
+
+<!-- Telefone para contato -->
+<p>Telefone: <br><span th:text="${reservaEnviada.telefone}"></span></p>
+
+<p>Status: <br><span th:text="${reservaEnviada.status}" th:classappend="${reservaEnviada.status} == 'APROVADA' ? 'aprovado' : 'reprovado'"></span></p>
+
+
+<!--<p>Name: <span th:text="${reservaEnviada.nome}"></span></p>-->
+<!--<p>Email: <span th:text="${reservaEnviada.email}"></span></p>-->
+<!--<p>Data Reserva: <span th:text="${reservaEnviada.data}"></span></p>-->
+<!--<p>Quantidade pessoas: <span th:text="${reservaEnviada.pessoas}"></span></p>-->
+<!--<p>Animal: <span th:text="${reservaEnviada.animal}"></span></p>-->
+<!--<p>Comentario: <span th:text="${reservaEnviada.comentario}"></span></p>-->
+<!--<p>Telefone: <span th:text="${reservaEnviada.telefone}"></span></p>-->
+<!--<p>Status: <span th:text="${reservaEnviada.status}"></span></p>-->
+
+<a href="/v1/reserva">Back to form</a>
+
+</form>
 
 </body>
 </html>
